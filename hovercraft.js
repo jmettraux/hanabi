@@ -37,15 +37,15 @@ var Hovercraft = function () {
 
   function draw (canvasId, x, y, zoom, r) {
 
-    var nw = size.w * zoom;
-    var nh = size.h * zoom;
-    var nx = x * zoom;
-    var ny = y * zoom;
-
     clear(canvasId);
 
     var c = document.getElementById(canvasId);
     var context = c.getContext('2d');
+
+    var nw = c._hover.image.width * zoom;
+    var nh = c._hover.image.height * zoom;
+    var nx = x * zoom;
+    var ny = y * zoom;
 
     context.save();
 
