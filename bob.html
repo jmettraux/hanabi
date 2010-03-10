@@ -13,9 +13,10 @@
   var size = { w:1418, h:1013 };
   //var bgcolor = 'white';
   var points = [
-    { x: 675, y: 325, zoom:1.00 },
-    { x: 700, y: 850, zoom:0.75 },
-    { x: 575, y: 410, zoom:2.00 },
+    { x: 675, y: 325, zoom: 1.00, r: Math.PI * 2 },
+    { x: 700, y: 850, zoom: 0.75, r: Math.PI * 2 },
+    { x: 575, y: 410, zoom: 2.00, r: Math.PI * 1 },
+    { x: 175, y: 525, zoom: 3.00, r: Math.PI * 2 },
   ];
   var position = -1;
 
@@ -32,9 +33,14 @@
     context.clearRect(0, 0, canvas.width, canvas.height);
   }
 
-  function draw (x, y, zoom) {
+  function draw (x, y, zoom, r) {
 
     clear();
+
+    context.save();
+
+    context.rotate(r);
+    //context.translate(canvas.width / 2, canvas.height / 2);
 
     var nw = size.w * zoom;
     var nh = size.h * zoom;
@@ -45,18 +51,20 @@
       image,
       canvas.width / 2 - nx, canvas.height / 2 - ny,
       nw, nh);
+
+    context.restore();
   }
 
   function move (a, b, progress) {
     var tx = a.x + (b.x - a.x) * progress;
     var ty = a.y + (b.y - a.y) * progress;
     var tz = a.zoom + (b.zoom - a.zoom) * progress;
-    draw(tx, ty, tz);
+    var tr = a.r + (b.r - a.r) * progress;
+    draw(tx, ty, tz, tr);
   }
+
   function do_move (a, b, progress) {
-      setTimeout(
-        function () { console.log(progress); move(a, b, progress); },
-        500 * progress);
+    setTimeout( function () { move(a, b, progress); }, 500 * progress);
   }
 
   function next () {
