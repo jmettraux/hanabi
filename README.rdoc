@@ -6,6 +6,8 @@ Hanabi is a beat prezi.com clone, for canvas-able browses (Firefox, Safari, Chro
 
 == testing
 
+Open the self_presentation.html file in your browser.
+
 
 == usage
 
