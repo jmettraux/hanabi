@@ -24,6 +24,9 @@
 
 var Hovercraft = function () {
 
+  var INC = 0.1;
+  var MILLISEC = 500;
+
   function clear (canvasId) {
 
     var c = document.getElementById(canvasId);
@@ -64,7 +67,7 @@ var Hovercraft = function () {
         var tr = a.r + (b.r - a.r) * progress;
         draw(canvasId, tx, ty, tz, tr);
       },
-      600 * progress);
+      MILLISEC * progress);
   }
 
   function next (canvasId) {
@@ -78,7 +81,7 @@ var Hovercraft = function () {
 
     var b = c._hover.points[c._hover.position];
 
-    for (var i = 0.1; i <= 1.0; i = i + 0.1) {
+    for (var i = INC; i <= 1.0; i = i + INC) {
       Hovercraft.step(canvasId, a, b, i);
     }
   }
