@@ -4,14 +4,14 @@
 </head>
 <body bgcolor="blue">
 
-<canvas id="can" width="800" height="600" />
+<canvas id="can" width="800" height="600" style="background-color: white;" />
 
 
 <script>
 
   var source = 'social.png';
   var size = { w:1418, h:1013 };
-  var bgcolor = 'grey';
+  //var bgcolor = 'white';
   var points = [
     { x: 675, y: 325, zoom:1.00 },
     { x: 700, y: 850, zoom:0.75 },
@@ -23,13 +23,17 @@
   var context = canvas.getContext('2d');
   var image = new Image();
   //image.onload = function () {
-  //  //context.drawImage(image, x, y, width, height);
-  //  context.drawImage(image, 10, 10, 500, 400);
   //};
   image.src = source;
-  if (bgcolor) canvas.style['background-color'] = bgcolor;
+  //if (bgcolor) canvas.style['background-color'] = bgcolor;
+
+  function clear () {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+  }
 
   function next () {
+
+    clear();
 
     position = position + 1;
     if (position >= points.length) position = 0;
