@@ -1,0 +1,6 @@
+
+[ ] other name
+[ ] onover callback, return false => stop, maybe
+[ ] left pane click = back
+[ ] stop = false points 
+
