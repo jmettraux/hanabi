@@ -28,26 +28,49 @@
   //if (bgcolor) canvas.style['background-color'] = bgcolor;
 
   function clear () {
+
     context.clearRect(0, 0, canvas.width, canvas.height);
   }
 
-  function next () {
+  function draw (x, y, zoom) {
 
     clear();
 
-    position = position + 1;
-    if (position >= points.length) position = 0;
-    var p = points[position];
-
-    var nw = size.w * p.zoom;
-    var nh = size.h * p.zoom;
-    var nx = p.x * p.zoom;
-    var ny = p.y * p.zoom;
+    var nw = size.w * zoom;
+    var nh = size.h * zoom;
+    var nx = x * zoom;
+    var ny = y * zoom;
 
     context.drawImage(
       image,
       canvas.width / 2 - nx, canvas.height / 2 - ny,
       nw, nh);
+  }
+
+  function move (a, b, progress) {
+    var tx = a.x + (b.x - a.x) * progress;
+    var ty = a.y + (b.y - a.y) * progress;
+    var tz = a.zoom + (b.zoom - a.zoom) * progress;
+    draw(tx, ty, tz);
+  }
+  function do_move (a, b, progress) {
+      setTimeout(
+        function () { console.log(progress); move(a, b, progress); },
+        500 * progress);
+  }
+
+  function next () {
+
+    var a = points[position] || points[0];
+
+    position = position + 1;
+    if (position >= points.length) position = 0;
+
+    var b = points[position];
+
+    for (var i = 0.1; i <= 1.0; i = i + 0.1) {
+      do_move(a, b, i);
+    }
   }
 
   canvas.onclick = function () {
