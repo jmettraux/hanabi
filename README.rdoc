@@ -1,0 +1,26 @@
+
+= hanabi
+
+Hanabi is a beat prezi.com clone, for canvas-able browses (Firefox, Safari, Chrome).
+
+
+== testing
+
+
+== usage
+
+
+== issue tracker
+
+http://github.com/jmettraux/hanabi/issues
+
+
+== author
+
+John Mettraux, http://githbub.com/jmettraux
+
+
+== license
+
+MIT
+

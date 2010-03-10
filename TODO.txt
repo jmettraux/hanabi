@@ -1,5 +1,6 @@
 
-[ ] other name
+[x] other name : hanabi
+
 [ ] onover callback, return false => stop, maybe
 [ ] left pane click = back
 [ ] stop = false points 

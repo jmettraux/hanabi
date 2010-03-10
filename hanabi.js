@@ -22,7 +22,7 @@
  * Made in Japan.
  */
 
-var Hovercraft = function () {
+var Hanabi = function () {
 
   var INC = 0.1;
   var MILLISEC = 500;
@@ -82,7 +82,7 @@ var Hovercraft = function () {
     var b = c._hover.points[c._hover.position];
 
     for (var i = INC; i <= 1.0; i = i + INC) {
-      Hovercraft.step(canvasId, a, b, i);
+      Hanabi.step(canvasId, a, b, i);
     }
   }
 
@@ -97,7 +97,7 @@ var Hovercraft = function () {
 
     canvas._hover.position = -1;
 
-    canvas.onclick = function () { Hovercraft.next(canvasId); };
+    canvas.onclick = function () { Hanabi.next(canvasId); };
   };
 
   return {
