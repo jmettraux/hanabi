@@ -1,0 +1,38 @@
+
+<html>
+<head>
+  <script src="bob.js"></script>
+</head>
+<body bgcolor="blue">
+
+<canvas id="can" width="800" height="600" style="background-color: white;" />
+
+<script>
+
+  var source = 'social.png';
+  var size = { w:1418, h:1013 };
+  //var bgcolor = 'white';
+  var points = [
+    { x: 675, y: 325, zoom: 1.00, r: Math.PI * 2 },
+    { x: 700, y: 850, zoom: 0.75, r: Math.PI * 1 },
+    { x: 575, y: 410, zoom: 2.00, r: Math.PI * 2 },
+    { x: 175, y: 525, zoom: 3.00, r: Math.PI * 2 },
+    { x: 650, y: 100, zoom: 3.20, r: Math.PI * 2 },
+  ];
+
+  //var source = 'mn201003.png';
+  //var size = { w:1600, h:1200 };
+  ////var bgcolor = 'white';
+  //var points = [
+  //  { x: 250, y: 130, zoom: 3.00, r: Math.PI * 2 },
+  //  { x: 320, y: 310, zoom: 2.00, r: Math.PI * 2 },
+  //  { x: 570, y: 200, zoom: 2.20, r: Math.PI * 2 },
+  //  { x: 1100, y: 670, zoom: 1.50, r: Math.PI * 2 },
+  //  { x: 800, y: 600, zoom: 0.50, r: Math.PI * 2 },
+  //];
+
+  Hovercraft.init('can', source, points);
+</script>
+</body>
+</html>
+
