@@ -1,7 +1,7 @@
 
-[x] other name : hanabi
+[o] other name : hanabi
+[o] stop:false points 
 
 [ ] onover callback, return false => stop, maybe
 [ ] left pane click = back
-[ ] stop:false points 
 
