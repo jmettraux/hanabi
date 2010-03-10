@@ -2,10 +2,22 @@
 <html>
 <head>
   <script src="hanabi.js"></script>
+  <style>
+    body {
+      font-family: Helvetica neue, Helvetica;
+    }
+    a {
+      font-size: 8pt;
+    }
+  </style>
 </head>
 <body bgcolor="white">
 
-<canvas id="can" width="1000" height="700" style="background-color: white;" />
+<canvas id="can" width="1000" height="700" style="background-color: white;"></canvas>
+
+<br/>
+
+<a href="http://github.com/jmettraux/hanabi">http://github.com/jmettraux/hanabi</a>
 
 <script>
 
@@ -28,8 +40,6 @@
   ];
 
   Hanabi.init('can', source, points);
-
-  Hanabi.next('can'); // position on first slide
 
 </script>
 </body>

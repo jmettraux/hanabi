@@ -84,6 +84,10 @@ var Hanabi = function () {
     for (var i = INC; i <= 1.0; i = i + INC) {
       Hanabi.step(canvasId, a, b, i);
     }
+
+    if (b.stop == false) {
+      setTimeout(function () { next(canvasId); }, MILLISEC * (1 + INC));
+    }
   }
 
   function init (canvasId, imageSource, points) {
@@ -91,13 +95,14 @@ var Hanabi = function () {
     var canvas = document.getElementById(canvasId);
     canvas._hover = {};
     canvas._hover.image = new Image();
-    //canvas._hover_image.onload = function () {};
     canvas._hover.image.src = imageSource;
     canvas._hover.points = points;
 
     canvas._hover.position = -1;
 
-    canvas.onclick = function () { Hanabi.next(canvasId); };
+    canvas._hover.image.onload = function () { next(canvasId); };
+
+    canvas.onclick = function () { next(canvasId); };
   };
 
   return {
