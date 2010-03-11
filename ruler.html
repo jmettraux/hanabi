@@ -23,7 +23,7 @@
   document.getElementById('image').onclick = function (e) {
     out.innerHTML =
       out.innerHTML + "\n" +
-      "{ x: " + e.clientX + ", y: " + e.clientY +
+      "{ x: " + e.pageX + ", y: " + e.pageY +
       ", zoom: 3.0, r: Math.PI * 2 },";
   }
 
