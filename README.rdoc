@@ -30,7 +30,7 @@ to load the image, specify the trajectory and init the presentation :
 
   <script>
 
-    var source = 'self.png';
+    var source = 'path/to/my_image.png';
 
     var points = [
       { x: 504, y: 340, zoom: 0.5, r: Math.PI * 2 },
@@ -53,10 +53,36 @@ to load the image, specify the trajectory and init the presentation :
 
   </script>
 
+=== stop: false
+
+If you flag a point with stop: false, hanabi will only travel through it.
+
+=== t: "some text"
+
+If a point has a key t and a string value and a "can_text" ("<canvas_id>_text") element is present, the innerHTML of this element will be replaced with the string value provided. If no string value is provided, the innerHTML is cleared.
+
+=== _counter
+
+Similarily, if a "can_counter" ("<canvas_id>_counter") element is present, its innerHTML will be replaced by the integer value for the current position in the trajectory.
+
+=== f: function (index) { alert("my callback !"); }
+
+If the point has a 'f' key, its value must be a function and that function gets called when the point is reached.
+
+=== click back
+
+If you click on the 80 pixel right part of the canvas, hanabi will step back 1 point.
+
 
 == ruler.html
 
 The file ruler.html contains a click, click then copy tool for determining trajectories for your image file.
+
+Make sure to replace the src with the URI/path of your image
+
+  <img id="image" src="path/to/my_image.png" />
+
+and then start clicking trajectories (don't be afraid to scroll in any direction, the script uses pageX / pageY).
 
 
 == issue tracker
