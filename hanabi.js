@@ -24,6 +24,8 @@
 
 var Hanabi = function () {
 
+  var VERSION = '0.1.0';
+
   var INC = 0.1;
   var MILLISEC = 500;
 
@@ -106,6 +108,11 @@ var Hanabi = function () {
   };
 
   return {
+
+    VERSION: VERSION,
+    INC: INC,
+    MILLISEC: MILLISEC,
+
     init: init,
     next: next,
     step: step,

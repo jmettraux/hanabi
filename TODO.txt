@@ -5,3 +5,6 @@
 [ ] onover callback, return false => stop, maybe
 [ ] left pane click = back
 
+[ ] callback for each point
+[ ] when moving back : no callback firing, or pass a "back" parameter
+
