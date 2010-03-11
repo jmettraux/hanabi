@@ -93,6 +93,9 @@ var Hanabi = function () {
     if (b.stop == false && increment > 0) {
       setTimeout(function () { next(canvasId); }, MILLISEC * (1 + INC));
     }
+
+    var cc = document.getElementById(canvasId + '_counter');
+    if (cc) cc.innerHTML = "" + c._hover.position;
   }
 
   function init (canvasId, imageSource, points) {
