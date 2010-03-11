@@ -72,22 +72,25 @@ var Hanabi = function () {
       MILLISEC * progress);
   }
 
-  function next (canvasId) {
+  function next (canvasId, increment) {
+
+    if (increment == undefined) increment = +1;
 
     var c = document.getElementById(canvasId);
 
     var a = c._hover.points[c._hover.position] || c._hover.points[0];
 
-    c._hover.position += 1;
-    if (c._hover.position >= c._hover.points.length) c._hover.position = 0;
+    c._hover.position += increment;
+    if (c._hover.position >= c._hover.points.length)
+      c._hover.position = 0;
+    if (c._hover.position < 0)
+      c._hover.position = c._hover.points.length + c._hover.position;
 
     var b = c._hover.points[c._hover.position];
 
-    for (var i = INC; i <= 1.0; i = i + INC) {
-      Hanabi.step(canvasId, a, b, i);
-    }
+    for (var i = INC; i <= 1.0; i = i + INC) { step(canvasId, a, b, i); }
 
-    if (b.stop == false) {
+    if (b.stop == false && increment > 0) {
       setTimeout(function () { next(canvasId); }, MILLISEC * (1 + INC));
     }
   }
@@ -104,7 +107,12 @@ var Hanabi = function () {
 
     canvas._hover.image.onload = function () { next(canvasId); };
 
-    canvas.onclick = function () { next(canvasId); };
+    canvas.onclick = function (evt) {
+      if (evt.clientX < 84)
+        next(canvasId, -1)
+      else
+        next(canvasId, +1);
+    };
   };
 
   return {

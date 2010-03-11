@@ -1,10 +1,10 @@
 
 [o] other name : hanabi
 [o] stop:false points 
+[o] left pane click = back
+[o] when moving back : no callback firing, or pass a "back" parameter
 
 [ ] onover callback, return false => stop, maybe
-[ ] left pane click = back
 
 [ ] callback for each point
-[ ] when moving back : no callback firing, or pass a "back" parameter
 
