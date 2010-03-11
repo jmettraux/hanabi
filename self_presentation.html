@@ -29,6 +29,10 @@
 
 <script>
 
+  function myCallback (index) {
+    document.getElementById('can_text').innerHTML = "that's all folks !";
+  }
+
   var source = 'self.png';
   var points = [
     { x: 504, y: 340, zoom: 0.5, r: Math.PI * 2 },
@@ -44,7 +48,7 @@
     { x: 363, y: 391, zoom: 2.0, r: Math.PI * 1.9 },
     { x: 86, y: 451, zoom: 2.0, r: Math.PI * 2, t:"<-- link here" },
     { x: 506, y: 336, zoom: 2.0, r: Math.PI * 2 },
-    { x: 321, y: 31, zoom: 2.0, r: Math.PI * 0.2 },
+    { x: 321, y: 31, zoom: 2.0, r: Math.PI * 0.2, f: myCallback },
   ];
 
   Hanabi.init('can', source, points);

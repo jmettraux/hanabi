@@ -94,6 +94,12 @@ var Hanabi = function () {
       setTimeout(function () { next(canvasId); }, MILLISEC * (1 + INC));
     }
 
+    if (b.f != undefined && increment > 0) { // callback if any
+      setTimeout(
+        function () { b.f(c._hover.position); },
+        MILLISEC * (1 + INC));
+    }
+
     var cc = document.getElementById(canvasId + '_counter');
     if (cc) cc.innerHTML = '' + c._hover.position;
 
