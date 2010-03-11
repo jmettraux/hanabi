@@ -9,7 +9,7 @@
     a {
       font-size: 8pt;
     }
-    #can_counter {
+    .misc {
       font-size: 8pt;
       opacity: 0.5;
     }
@@ -21,7 +21,11 @@
 
 <br/>
 
-<a href="http://github.com/jmettraux/hanabi">http://github.com/jmettraux/hanabi</a> <span id="can_counter">-1</span>
+<a href="http://github.com/jmettraux/hanabi">http://github.com/jmettraux/hanabi</a>
+<span class="misc">
+  <span id="can_text"></span>
+  <span id="can_counter">-1</span>
+</span>
 
 <script>
 
@@ -38,7 +42,7 @@
     { x: 696, y: 513, zoom: 2.0, r: Math.PI * 2.1 },
     { x: 914, y: 501, zoom: 2.0, r: Math.PI * 2 },
     { x: 363, y: 391, zoom: 2.0, r: Math.PI * 1.9 },
-    { x: 86, y: 451, zoom: 2.0, r: Math.PI * 2 },
+    { x: 86, y: 451, zoom: 2.0, r: Math.PI * 2, t:"<-- link here" },
     { x: 506, y: 336, zoom: 2.0, r: Math.PI * 2 },
     { x: 321, y: 31, zoom: 2.0, r: Math.PI * 0.2 },
   ];

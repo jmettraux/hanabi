@@ -95,7 +95,11 @@ var Hanabi = function () {
     }
 
     var cc = document.getElementById(canvasId + '_counter');
-    if (cc) cc.innerHTML = "" + c._hover.position;
+    if (cc) cc.innerHTML = '' + c._hover.position;
+
+    var ct = document.getElementById(canvasId + '_text');
+    if (ct && b.t) ct.innerHTML = '' + b.t;
+    else if (ct) ct.innerHTML = '';
   }
 
   function init (canvasId, imageSource, points) {
